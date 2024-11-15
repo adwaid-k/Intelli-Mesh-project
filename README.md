@@ -114,7 +114,7 @@ The BPI-R3's architecture combines robust hardware with rich connectivity, makin
 
 • 4g Module
 
-![4g module](include/EC200U_Layered.png)
+![4g module](include/ec200a.png)
 
 
 
