@@ -166,6 +166,96 @@ formance by balancing the load.
 ![System Architecture](include/system_architecture.png)
 
 
+## Implementation
+
+![Implementation flowchart](include/implementation_steps.png)
+
+➣ Create Custom OpenWRTLinux Build  
+ The project begins with creating a customized version of OpenWRT, an open-source
+ Linux-based operating system commonly used on embedded devices and routers. This
+ custom build will include the necessary modules and dependencies to support mesh net
+working, multi-WAN capabilities, and load balancing features required by the Intelli
+Mesh network.
+
+ ➣ AddBATMAN-ADVSupport  
+ After setting up the OpenWRT base, BATMAN-ADV (Better Approach to Mobile Ad
+hoc Networking) support is added. BATMAN-ADV is a routing protocol specifically
+ designed for decentralized wireless mesh networks. It allows network nodes to make in
+dependent decisions, optimizing routes based on network topology changes. This feature
+ is critical for creating a self-healing and resilient mesh network.
+ 
+ ➣ ConfigureMulti-VLAN Support  
+ Next, multi-VLAN (Virtual Local Area Network) support is configured to segment the
+ network traffic into different VLANs. This step enables the separation of traffic types,
+ such as management traffic, guest networks, and IoT devices, enhancing both security
+ and traffic management. VLAN segmentation also allows for more efficient bandwidth
+ usage and improved quality of service (QoS).
+ 
+ ➣ Setup4GModemDialing  
+ In this step, the system is configured to handle 4G modem dialing. This setup enables
+ WAN redundancy by adding cellular connectivity as a backup option. By using 4G (or
+ possibly 5G in future iterations), the network can maintain connectivity even if the pri
+mary wired or fiber connection fails. This step ensures that each node has access to
+ multiple WAN options, contributing to the system’s reliability.
+ 
+ ➣ IntegrateLoad Balancing Using mwan3  
+ Load balancing is achieved using mwan3, a multi-WAN manager available in OpenWRT.
+ mwan3distributes traffic load across multiple WAN connections, optimizing network per
+formance and preventing any single WAN link from being overwhelmed. This feature is
+ essential for efficiently managing bandwidth and maintaining high performance, particu
+larly in environments with varying internet connectivity options.  
+
+ ➣ Develop and Implement a Custom Python Script for Self-Healing Mesh Network  
+ Acustom Python script is developed and implemented to enable self-healing capabilities
+ within the network. This script monitors the status of network nodes and WAN connec
+tions in real time. If a node or WAN connection fails, the script automatically re-routes
+ traffic and adjusts the mesh topology to maintain connectivity. This self-healing mech
+anism is a core component of Intelli-Mesh, enabling automatic recovery from network
+ failures.  
+ 
+ ➣ 802.11r Fast Roaming  
+ The802.11r protocol, known as ”Fast Roaming,” is configured to improve mobility within
+ the network. This protocol allows devices to quickly roam between access points with
+ minimal latency, which is particularly useful for mobile devices in environments requir
+ing seamless connectivity. Fast roaming ensures that devices stay connected without no
+ticeable interruptions when they move between different mesh nodes.  
+
+ ➣ Create Local Dashboard Using JavaScript and Python Flask  
+ Alocal management dashboard is created using Flask (a lightweight Python web frame
+work) and JavaScript. This dashboard provides a user-friendly interface for monitoring
+ and managingthenetwork. Keyfeatures include real-time visualization of network status,
+ traffic distribution, and alerts for network events such as node failures or WAN discon
+nections.  
+
+➣ ConfigureLocal Dashboard   
+ Once the dashboard is built, it is configured to interact with the mesh network. This
+ includes setting up real-time data feeds from network nodes and implementing controls
+ for users to adjust network parameters (such as load balancing thresholds, node priorities,
+ and VLAN settings). The configuration process ensures that the dashboard accurately
+ reflects the live network state.
+ 
+ ➣ ConfigureCommunication Between Hardware and Local Dashboard  
+ In this step, the communication between the hardware (mesh nodes and routers) and the
+ local dashboard is established. The MQTT protocol, known for its lightweight nature and
+ efficiency in real-time data exchange, may be used here to enable the dashboard to receive
+ instant updates from the nodes. This communication link is crucial for the dashboard to
+ display accurate, up-to-date network information and for administrators to control the
+ network remotely.
+ 
+ ➣ TestSystem  
+ After the entire system setup, rigorous testing is conducted. Testing includes simulating
+ node failures, WAN link disconnections, load balancing, and fast roaming to ensure that
+ all components function as expected. The self-healing script, load balancing configura
+tion, and dashboard functionalities are also tested for reliability, resilience, and usability.
+ This step validates the robustness of the Intelli-Mesh network.
+ 
+ ➣ DeploySystem  
+ Once the system passes all tests, it is ready for deployment in the intended environment.
+ During deployment, final configurations may bemadetoadapttospecificconditions, such
+ as geographic layout or the expected number of network nodes. The deployed system is
+ then monitored in real-time through the dashboard, and adjustments are made as needed
+ to maintain optimal performance
+
 
 
 ## Download
