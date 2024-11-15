@@ -1,4 +1,4 @@
-![Intelli-MEsh logo](include/intelli mesh logo.png)
+![Intelli-MEsh logo](include/intelli-mesh-logo.png)
 
 OpenWrt Project is a Linux operating system targeting embedded devices. Instead
 of trying to create a single, static firmware, OpenWrt provides a fully
