@@ -14,8 +14,7 @@ matic failover to different connections (e.g., 4G modems), managed by mwan3 for 
  and management. Designed for environments ranging from small enterprises to rural areas,
  Intelli-Mesh aims to be a cost-effective, reliable, and manageable network solution, contribut
 ing valuable insights into self-healing mesh networks and setting a new standard for future
- network infrastructure
-
+ network infrastructure.
 
 ## Introduction
 
