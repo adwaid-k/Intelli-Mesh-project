@@ -75,6 +75,48 @@ face to monitor and control network activities, ensuring ease of management and 
 dresses the critical connectivity challenges of modern systems and offers a versatile solution
  suitable for a wide range of applications.
 
+## Hardware
+• Banana Pi BPI-R3
+
+![banana pi](include/banana_pi.png)
+
+The **Banana Pi BPI-R3** is a powerful router board designed for high-performance networking and IoT applications. Its architecture integrates advanced hardware and versatile connectivity options:
+
+1. **Processor and Memory**:
+   - Powered by the **MediaTek MT7986 (Filogic 830)** quad-core ARM Cortex-A53 CPU, offering efficient processing for networking tasks.
+   - Includes **2GB DDR RAM** and **8GB eMMC storage** (expandable with SD cards), ensuring smooth performance and storage flexibility.
+
+2. **Networking Capabilities**:
+   - Equipped with **five Gigabit Ethernet ports**: 1 WAN and 4 LAN, supporting high-speed wired connections.
+   - Features dual **M.2 slots** and PCIe support, ideal for adding wireless modules, such as 4G/5G modems or Wi-Fi 6 cards.
+
+3. **Expandable Connectivity**:
+   - Includes **USB 3.0** ports for external devices and **UART, GPIO, and I2C pins** for IoT and embedded applications.
+   - **Dual SIM card slots** enable seamless LTE/5G connectivity in advanced network setups.
+
+4. **Operating System Support**:
+   - Supports **OpenWRT**, Linux distributions, and other custom OS builds, making it highly customizable for routing and edge-computing projects.
+
+5. **Use Cases**:
+   - Ideal for mesh networks, IoT gateways, multi-WAN routers, and self-healing network systems.
+
+The BPI-R3's architecture combines robust hardware with rich connectivity, making it a versatile choice for advanced networking and IoT projects like Intelli-Mesh.
+
+
+## Equipments Used
+• Metal case and External antennas for Banana Pi BPI-R3
+
+![Metal case and External antennas](include/metal_case_with_external_antennas.png)
+
+• Heat-sink for Banana Pi BPI-R3
+
+![Heatsink](include/heatsink.png)
+
+• 4g Module
+
+![4g module](include/EC200U_Layered.png)
+
+
 
 
 ## Work-Flow Diagram
