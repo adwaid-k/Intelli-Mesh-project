@@ -23,7 +23,7 @@ ing valuable insights into self-healing mesh networks and setting a new standard
  by offering a self-healing system that emphasizes high reliability, superior performance, and
  scalable functionality. Leveraging the capabilities of the BATMAN-ADV (Better Approach
  To Mobile Adhoc Networking) routing protocol and utilizing Banana Pi R3 hardware with a
- customized OpenWRTfirmware, thisinnovative solution is designed to address critical issues in
+ customized OpenWRT firmware, this innovative solution is designed to address critical issues in
  network stability and efficiency. By incorporating self-healing capabilities, Intelli-Mesh is able
  to detect and automatically resolve network disruptions, minimizing downtime and ensuring
  continuous availability. The system’s load balancing feature optimizes bandwidth usage across
@@ -46,7 +46,7 @@ formance even during node failures. Multi-VLAN support, meanwhile, facilitates t
 mentation, contributing to a more organized and streamlined network environment. A locally
  developed dashboard, built using Python Flask and JavaScript, provides users with an intuitive
  interface for monitoring and managing the network, further enhancing the system’s practicality.
- Byaddressing the inherent limitations of existing mesh network designs, Intelli-Mesh offers
+ By addressing the inherent limitations of existing mesh network designs, Intelli-Mesh offers
  substantial improvements in terms of fault tolerance, scalability, and overall resilience. Each
  node’s transformation into a ”smart” entity capable of independent decision-making not only
  reduces points of vulnerability but also significantly boosts adaptability and network robust
@@ -90,79 +90,80 @@ Mesh network. This architecture combines various elements, such as WAN connectio
  wireless mesh network, and management modules, to create a resilient, autonomous, and self
 healing mesh network.  
 
- • Internet: At the top of the architecture is the Internet, which serves as the source of
+ • **Internet**: At the top of the architecture is the Internet, which serves as the source of
  external network connectivity. The Intelli-Mesh system can utilize multiple WAN con
 nections to connect to the Internet, providing redundancy and load balancing for stable
  connectivity.  
  
- • WANConnections:  
- ➣ WAN1,WAN2,WAN3,WAN4: Thearchitecturesupports multiple WAN (Wide
+ • **WANConnections**:  
+ ➣ **WAN1,WAN2,WAN3,WAN4**: The architecture supports multiple WAN (Wide
  Area Network) connections, both wired and wireless (4G). These WAN connections
  act as the gateways to the Internet.  
- ➣ Wired WAN Connections: These could be broadband, fiber, or Ethernet-based
- WANlinks that provide a stable and high-bandwidth connection to the Internet.  
- ➣ Wireless WAN (4G) Connections: These use 4G modems to establish cellular
+ ➣ **Wired WAN Connections**: These could be broadband, fiber, or Ethernet-based
+ WAN links that provide a stable and high-bandwidth connection to the Internet.  
+ ➣ **Wireless WAN (4G) Connections**: These use 4G modems to establish cellular
 based connectivity, offering redundancy in case the wired connections fail.  
- ➣ TheuseofmultipleWANsenablesloadbalancingandfailover capabilities, ensuring
+ ➣ The use of multiple WANs enables load balancing and failover capabilities, ensuring
  that network users experience minimal interruptions even if one or more WAN links
  go down.  
  
- • Wireless Mesh Network:  
- ➣ BATMAN-ADVProtocol: AtthecoreofthewirelessmeshnetworkistheBATMAN
+ • **Wireless Mesh Network**:  
+ ➣ **BATMAN-ADVProtocol**: At the core of the wireless mesh network is the BATMAN
 ADV (Better Approach to Mobile Ad-hoc Networking- Advanced) protocol. This
  protocol is specifically designed for mesh networking and allows each node to make
  autonomous decisions based on the network topology. It creates a self-organizing
  and decentralized mesh, where each node can dynamically route data and handle
  network changes effectively.  
- ➣ Node 1 and Node 2: These nodes represent the physical devices in the mesh net
+ ➣ **Node 1 and Node 2**: These nodes represent the physical devices in the mesh net
 work. They are configured with the BATMAN-ADV protocol, allowing them to
  communicate with each other and form a cohesive, resilient network.  
- ➣ Nodesarecapableofself-healing, meaning they can detect when a neighboring node
+ ➣ Nodes are capable of self-healing, meaning they can detect when a neighbouring node
  or WAN connection is down and adjust routing accordingly to maintain network
  connectivity.  
  ➣ Nodes can act as both transmitters and receivers in the mesh network, supporting
  peer-to-peer communication without relying on a centralized controller.  
  
- • Local Dashboard:  
- ➣ Thelocal dashboard is the user interface component of the architecture. It provides
+ • **Local Dashboard**:  
+ ➣ The local dashboard is the user interface component of the architecture. It provides
  network administrators with access to various management and monitoring features.
- Thelocal dashboard is typically hosted on a web server and is accessible from within
+ The local dashboard is typically hosted on a web server and is accessible from within
  the network.  
-➣ Node Management: Allows administrators to view and manage individual mesh
+➣ **Node Management**: Allows administrators to view and manage individual mesh
  nodes. This includes monitoring their status, location, and current connection routes.  
- ➣ Network Visualization: Provides a real-time view of the mesh network topology,
+ ➣ **Network Visualization**: Provides a real-time view of the mesh network topology,
  showing how nodes are connected, the status of each link, and any failures or ad
 justments made in real-time.  
- ➣ Configuration Interface: Offers tools for adjusting network settings, such as load
+ ➣ **Configuration Interface**: Offers tools for adjusting network settings, such as load
  balancing parameters, VLAN configurations, and WANpreferences. Administrators
  can also use the configuration interface to set thresholds for failover and specify
  backup routes.  
  
- • Custom OpenWRTLinuxBuild:  
- ➣ Multiple VLAN Module:Supports multiple Virtual LANs (VLANs) to segment
+ • **Custom OpenWRTLinuxBuild**:  
+ ➣ **Multiple VLAN Module**: Supports multiple Virtual LANs (VLANs) to segment
  network traffic. This enables the creation of isolated network zones for different
  types of traffic, such as administrative, guest, and IoT traffic, enhancing both secu
 rity and performance.  
- ➣ Self-Healing Control System: This system continuously monitors the health of the
+ ➣ **Self-Healing Control System**: This system continuously monitors the health of the
  network. In the event of a failure (e.g., a node goes offline or a WAN connection is
  lost), it triggers automated actions to maintain connectivity.  
- ➣ WANFailureDetection: Monitors the status of each WAN connection and detects
+ ➣ **WANFailureDetection**: Monitors the status of each WAN connection and detects
  any outages. If a primary WAN link fails, the system automatically switches to a
  backup WAN.  
- ➣ Dynamic Routing Adjustment: Alters the routing paths within the mesh network
+ ➣ **Dynamic Routing Adjustment**: Alters the routing paths within the mesh network
  based on real-time conditions. If a node fails, routing paths are dynamically adjusted
  to route traffic through other nodes, ensuring data reaches its destination.  
- ➣ Neighbor WAN Selection: In a multi-node environment, nodes can select the best
- WAN connection available, even if it belongs to a neighboring node, to optimize
+ ➣ **Neighbor WAN Selection**: In a multi-node environment, nodes can select the best
+ WAN connection available, even if it belongs to a neighbouring node, to optimize
  overall connectivity.  
- ➣ Load Balancing Module: Uses mwan3, a multi-WAN management tool within
+ ➣ **Load Balancing Module**: Uses mwan3, a multi-WAN management tool within
  OpenWRT, to distribute traffic across all available WAN links. This prevents any
  single WAN connection from being overwhelmed and optimizes the network per
 formance by balancing the load.  
- ➣ 802.11r Fast Roaming: This protocol allows devices within the mesh network to
+ ➣ **802.11r Fast Roaming**: This protocol allows devices within the mesh network to
  roam seamlessly between nodes with minimal latency. Fast roaming is particularly
  beneficial in environments with mobile devices, as it minimizes connection drops
- when moving between different access points.  
+ when moving between different access points.
+ 
 ![System Architecture](include/system_architecture.png)
 
 
@@ -170,71 +171,71 @@ formance by balancing the load.
 
 ![Implementation flowchart](include/implementation_steps.png)
 
-➣ Create Custom OpenWRTLinux Build  
+➣  **Create Custom OpenWRTLinux Build**  
  The project begins with creating a customized version of OpenWRT, an open-source
  Linux-based operating system commonly used on embedded devices and routers. This
  custom build will include the necessary modules and dependencies to support mesh net
-working, multi-WAN capabilities, and load balancing features required by the Intelli
+working, multi-WAN capabilities, and load-balancing features required by the Intelli
 Mesh network.
 
- ➣ AddBATMAN-ADVSupport  
+ ➣ **Add BATMAN-ADVSupport**
  After setting up the OpenWRT base, BATMAN-ADV (Better Approach to Mobile Ad
 hoc Networking) support is added. BATMAN-ADV is a routing protocol specifically
  designed for decentralized wireless mesh networks. It allows network nodes to make in
 dependent decisions, optimizing routes based on network topology changes. This feature
  is critical for creating a self-healing and resilient mesh network.
  
- ➣ ConfigureMulti-VLAN Support  
+ ➣ **Configure Multi-VLAN Support** 
  Next, multi-VLAN (Virtual Local Area Network) support is configured to segment the
  network traffic into different VLANs. This step enables the separation of traffic types,
  such as management traffic, guest networks, and IoT devices, enhancing both security
  and traffic management. VLAN segmentation also allows for more efficient bandwidth
  usage and improved quality of service (QoS).
  
- ➣ Setup4GModemDialing  
- In this step, the system is configured to handle 4G modem dialing. This setup enables
+ ➣ **Set up 4G Modem Dialling**  
+ In this step, the system is configured to handle 4G modem dialling. This setup enables
  WAN redundancy by adding cellular connectivity as a backup option. By using 4G (or
  possibly 5G in future iterations), the network can maintain connectivity even if the pri
 mary wired or fiber connection fails. This step ensures that each node has access to
  multiple WAN options, contributing to the system’s reliability.
  
- ➣ IntegrateLoad Balancing Using mwan3  
+ ➣ **IntegrateLoad Balancing Using mwan3**  
  Load balancing is achieved using mwan3, a multi-WAN manager available in OpenWRT.
  mwan3distributes traffic load across multiple WAN connections, optimizing network per
 formance and preventing any single WAN link from being overwhelmed. This feature is
  essential for efficiently managing bandwidth and maintaining high performance, particu
 larly in environments with varying internet connectivity options.  
 
- ➣ Develop and Implement a Custom Python Script for Self-Healing Mesh Network  
- Acustom Python script is developed and implemented to enable self-healing capabilities
+ ➣ **Develop and Implement a Custom Python Script for Self-Healing Mesh Network** 
+ A custom Python script is developed and implemented to enable self-healing capabilities
  within the network. This script monitors the status of network nodes and WAN connec
 tions in real time. If a node or WAN connection fails, the script automatically re-routes
  traffic and adjusts the mesh topology to maintain connectivity. This self-healing mech
 anism is a core component of Intelli-Mesh, enabling automatic recovery from network
  failures.  
  
- ➣ 802.11r Fast Roaming  
- The802.11r protocol, known as ”Fast Roaming,” is configured to improve mobility within
+ ➣ **802.11r Fast Roaming**  
+ The 802.11r protocol, known as ”Fast Roaming,” is configured to improve mobility within
  the network. This protocol allows devices to quickly roam between access points with
  minimal latency, which is particularly useful for mobile devices in environments requir
 ing seamless connectivity. Fast roaming ensures that devices stay connected without no
 ticeable interruptions when they move between different mesh nodes.  
 
- ➣ Create Local Dashboard Using JavaScript and Python Flask  
- Alocal management dashboard is created using Flask (a lightweight Python web frame
+ ➣ **Create Local Dashboard Using JavaScript and Python Flask**  
+ A local management dashboard is created using Flask (a lightweight Python web frame
 work) and JavaScript. This dashboard provides a user-friendly interface for monitoring
- and managingthenetwork. Keyfeatures include real-time visualization of network status,
+ and managing the network. Key features include real-time visualization of network status,
  traffic distribution, and alerts for network events such as node failures or WAN discon
 nections.  
 
-➣ ConfigureLocal Dashboard   
+➣ **ConfigureLocal Dashboard**   
  Once the dashboard is built, it is configured to interact with the mesh network. This
  includes setting up real-time data feeds from network nodes and implementing controls
  for users to adjust network parameters (such as load balancing thresholds, node priorities,
  and VLAN settings). The configuration process ensures that the dashboard accurately
  reflects the live network state.
  
- ➣ ConfigureCommunication Between Hardware and Local Dashboard  
+ ➣ **Configure Communication Between Hardware and Local Dashboard**  
  In this step, the communication between the hardware (mesh nodes and routers) and the
  local dashboard is established. The MQTT protocol, known for its lightweight nature and
  efficiency in real-time data exchange, may be used here to enable the dashboard to receive
@@ -242,16 +243,16 @@ nections.
  display accurate, up-to-date network information and for administrators to control the
  network remotely.
  
- ➣ TestSystem  
+ ➣ **TestSystem**  
  After the entire system setup, rigorous testing is conducted. Testing includes simulating
  node failures, WAN link disconnections, load balancing, and fast roaming to ensure that
  all components function as expected. The self-healing script, load balancing configura
 tion, and dashboard functionalities are also tested for reliability, resilience, and usability.
  This step validates the robustness of the Intelli-Mesh network.
  
- ➣ DeploySystem  
+ ➣ **DeploySystem**  
  Once the system passes all tests, it is ready for deployment in the intended environment.
- During deployment, final configurations may bemadetoadapttospecificconditions, such
+ During deployment, final configurations may be made to adapt to specific conditions, such
  as geographic layout or the expected number of network nodes. The deployed system is
  then monitored in real-time through the dashboard, and adjustments are made as needed
  to maintain optimal performance
